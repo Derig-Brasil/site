@@ -1,0 +1,69 @@
+---
+layout: layout.njk
+title: Verificar e-mail | Biblioteca Digital | Dérig
+excludeFromSitemap: true
+---
+<div id="ondeComprar" class="cadastro">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > <a href="/biblioteca">Biblioteca Digital</a> > Verificar e-mail</p>
+      <h1>Verificar e-mail</h1>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container py-4">
+      <p>Enviamos um código de 6 dígitos para o seu e-mail. Digite-o abaixo para concluir seu cadastro.</p>
+
+      <form id="verifyForm" class="form-horizontal" method="POST" action="/api/biblioteca/verify-email" onsubmit="return onVerify(event)">
+        <input type="hidden" id="email" name="email" />
+
+        <div class="form-group">
+          <label for="code">Código de verificação</label>
+          <div class="col-sm-6">
+            <input type="text" id="code" name="code" class="form-control" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" required>
+          </div>
+        </div>
+
+        <div id="general-error" style="color:#b00020;font-size:13px;margin-bottom:8px;"></div>
+
+        <div class="form-group" id="enviar">
+          <input type="submit" value="Confirmar cadastro">
+        </div>
+      </form>
+
+      <p style="margin-top:16px">Se você não recebeu o e-mail, verifique a caixa de spam ou solicite um novo código redefinindo sua senha em <a href="/biblioteca/recuperar-senha">Esqueci minha senha</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function prefillEmail(){
+  const params = new URLSearchParams(location.search);
+  const email = params.get('email') || '';
+  if (email) {
+    const input = document.getElementById('email');
+    if (input) input.value = email;
+  }
+})();
+
+async function onVerify(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const res = await fetch(form.action, { method: 'POST', body: data, credentials: 'include' });
+  try{
+    const json = await res.json();
+    if(json && json.success){
+      location.href = '/biblioteca';
+      return false;
+    }
+    if (json && json.error) {
+      document.getElementById('general-error').textContent = String(json.error);
+      return false;
+    }
+  }catch(_){ }
+  document.getElementById('general-error').textContent = 'Não foi possível verificar seu e-mail.';
+  return false;
+}
+</script>

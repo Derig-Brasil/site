@@ -1,0 +1,72 @@
+---
+layout: layout.njk
+title: Biblioteca Digital | Dérig
+---
+
+<div id="downloadsList">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > Biblioteca Digital</p>
+      <h1>Biblioteca Digital</h1>
+    </div>
+  </div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="downloadListContainer">
+            <img src="/images/biblioteca/thumbs/library_exocad_derig_v8.png" alt="Biblioteca Exocad Dérig">
+						<div>
+							<h2>Biblioteca Exocad Dérig (v8)</h2>
+							<a href="/biblioteca/download/library_exocad_derig_v8.rar">Fazer download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="downloadListContainer">
+            <img src="/images/biblioteca/thumbs/tutorial_instalacao_biblioteca_exocad.png" alt="Tutorial de instalação da biblioteca">
+						<div>
+							<h2>Tutorial de instalação da biblioteca Exocad</h2>
+							<a href="/biblioteca/download/tutorial_instalacao_biblioteca_exocad.pdf">Fazer download</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="downloadListContainer">
+            <img src="/images/biblioteca/thumbs/identificando_o_produto_derig_dentro_da_biblioteca_exocad.png" alt="Identificando o produto Dérig">
+						<div>
+							<h2>Identificando o produto Dérig na biblioteca Exocad</h2>
+							<a href="/biblioteca/download/identificando_o_produto_derig_dentro_da_biblioteca_exocad.pdf">Fazer download</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <div class="row">
+        <div class="col-12">
+          <form method="POST" action="/api/biblioteca/logout" class="mt-4" onsubmit="return onLogout(event)">
+            <button type="submit" class="btn btn-outline-secondary">Sair</button>
+          </form>
+        </div>
+      </div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+async function onLogout(e){
+  e.preventDefault();
+  const form = e.target;
+  try {
+    await fetch(form.action, { method: 'POST', credentials: 'include' });
+  } catch (_) {}
+  location.href = '/';
+  return false;
+}
+</script>

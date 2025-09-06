@@ -1,0 +1,103 @@
+---
+layout: layout.njk
+title: Trabalhe Conosco | Dérig
+description: Junte-se ao nosso time e faça parte de uma empresa comprometida com pesquisa, desenvolvimento, novas tecnologias, educação e qualidade de vida.
+---
+
+<div id="trabalheConosco">
+	<div id="headerInterno">
+		<div class="container">
+			<p><a href="/">Home</a> > <a href="/contato">Contato</a> > Trabalhe conosco</p>
+			<h1>Trabalhe conosco</h1>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p>Junte-se ao nosso time e faça parte de uma empresa comprometida com pesquisa, desenvolvimento, novas tecnologias, educação e qualidade de vida.</p>
+				</div>
+				<div class="col-md-6">
+					<form id="trabalheConoscoForm" enctype="multipart/form-data">
+						<label for="nome">Nome completo</label>
+						<input type="text" name="nome" id="nome" required>
+
+						<label for="email">E-mail</label>
+						<input type="email" name="email" id="email" required>
+
+						<label for="ddd">Telefone</label>
+						<input type="text" class="form-control cel-sp-mask" id="celular" name="celular" placeholder="">
+
+						<label for="curriculo">Currículo</label>
+						<div class="col-sm-6 col-xs-6">
+							<input type="text" id="inputField" class="form-control" readonly>
+						</div>
+						<div class="col-sm-4 col-xs-4">
+							<label class="input-group-btn">
+								<span class="btn btn-primary btn-block">
+									Selecionar<input type="file" name="file" style="display: none;" required accept=".doc,.docx,.pdf">
+								</span>
+							</label>
+						</div>
+
+						<div id="submitContainer">
+							<input type="submit" value="Enviar">
+						</div>
+						<p id="successMsg" style="display: none;"><img src="/images/layout/ico-sucesso.png" alt="Check">Mensagem enviada com sucesso!</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function() {
+    const form = document.getElementById('trabalheConoscoForm');
+    if (!form) return;
+    const success = document.getElementById('successMsg');
+
+    // Show selected filenames in the read-only field
+    const fileInput = form.querySelector('input[type="file"][name="file"]');
+    const display = document.getElementById('inputField');
+    if (fileInput && display) {
+      fileInput.addEventListener('change', () => {
+        const f = (fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
+        if (!f) { display.value = ''; return; }
+        const MAX_BYTES = 10 * 1024 * 1024; // 10MB
+        if (f.size > MAX_BYTES) {
+          alert('Arquivo muito grande. Tamanho máximo: 10MB.');
+          fileInput.value = '';
+          display.value = '';
+          return;
+        }
+        display.value = f.name;
+      });
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      success && (success.style.display = 'none');
+      const submitBtn = form.querySelector('input[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      try {
+        const res = await fetch('/api/form/trabalhe-conosco', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) {
+          alert('Falha ao enviar. Tente novamente mais tarde.');
+          return;
+        }
+        if (success) success.style.display = 'block';
+        form.reset();
+      } catch (_) {
+        alert('Erro de rede. Verifique sua conexão.');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  })();
+</script>

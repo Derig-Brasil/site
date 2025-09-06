@@ -1,0 +1,422 @@
+a:hover{
+  cursor: pointer;
+}
+h1 span, h2 span, p span {display: block;}
+h1, h2 {font-weight: 400; margin-top: 0;}
+.home { font-size: 18px; font-weight: bold; }
+body {font-family: 'Encode Sans', helvetica; font-weight: 400;}
+ul {list-style: none; padding: 0;}
+input:focus, textarea:focus {outline-color: #f04e23;}
+p {font-size: 16px;}
+#fone2 {display: inline-block; margin-top: 16px;}
+#content { font-size: 16px; }
+.img-responsive { margin: auto; }
+.fa-external-link-alt { font-size: 70% }
+.navbar {margin-bottom: 0;}
+.container>.navbar-collapse, #topMenu .container nav {width: 80%;}
+#topMenu .container nav {float: right; padding-left: 15px!important;}
+#topMenu .container nav ul {display: inline-block; margin: 0; padding-top: 10px;}
+#topMenu .container nav ul li a {display: inline-block; padding-bottom: 7px;}
+#topMenu .container nav ul li a:hover {text-decoration: none;}
+#topMenu .container nav ul:last-child {float: right;}
+.logo { max-width: 10vw; margin-top: -5px;}
+.navbar > .container {padding-top: 24px;}
+.navbar-nav>li>a {text-transform: uppercase; padding-bottom: 24px;}
+.navbar-nav>li>a:hover {background: none;}
+.navbar-nav>li::after, #topMenu .container nav ul li:after, #produtoTpl1 nav ul li:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f04e23;
+  transition: width .3s;
+}
+.navbar-nav>li:hover::after, #topMenu .container nav ul li:hover:after, #produtoTpl1 nav ul li:hover:after {
+  width: 100%;
+}
+.tesde::after{
+content: '';
+  display: block!important;
+  width: 100%!important;
+  height: 2px!important;
+  background: #f04e23!important;
+  transition: none ;
+}
+#pageHeader ul li {margin-right: 20px;}
+#pageHeader ul li:last-child {margin-right: 0;}
+#pageHeader .container div, #pageHeader .container nav, #pageHeader .container form {padding: 0;}
+#pageHeader form {text-align: right;}
+#pageHeader form i {color: #f04e23;}
+#pageHeader form input, .btn-default {border-radius: 0;}
+.btn-default {border-left: none;}
+.container-fluid {padding: 0;}
+#pageHeader .navbar-static #topMenu {background-color: #212326;}
+#pageHeader {background-color: #101112;}
+#pageHeader ul li {display: inline-block;}
+#pageHeader ul li a {color: #fff; font-family: 'Encode Sans Condensed', helvetica;}
+#destaque {background: url(../images/layout/bg.png); background-position: bottom; background-repeat: repeat-x; padding-bottom: 190px;}
+#destaque #contentStyle {background: rgba(0,0,0,.9) url(../images/layout/bg-grafismo-header.png) bottom; background-repeat: repeat-x;}
+#destaque #contentStyle .container {background: url(../images/home/bg-desenho.png) no-repeat left; padding: 160px 0 180px 0;}
+#destaque h1 {color: #f04e23; font-size: 32px;}
+#destaque h1 span {color: #707070; font-size: 16px; margin-bottom: 20px; text-transform: uppercase;}
+#destaque h2 {color: #fff; font-size: 40px; line-height: 50px; margin-bottom: 100px;}
+/*#destaque a {border: solid 1px #f04e23; border-radius: 55px; color: #f04e23; font-size: 16px; padding: 20px 80px; text-transform: uppercase;}*/
+/*#destaque a:hover {background-color: #f04e23; color: #fff; text-decoration: none;}*/
+#destaque .container {position: relative;}
+#destaque img {width: 100%; }
+/*#destaque img {position: absolute; right: -50px; bottom: -100px; width: 40%;}*/
+#destaque .carousel-indicators {bottom: -50px;}
+#destaque .carousel-indicators li {background-color: #a8adb4; height: 20px; width: 20px;}
+#destaque .carousel-indicators .active {background-color: #f04e23!important; height: 20px; width: 20px;}
+#catalogo {color: white; text-align: center; padding: 50px 0; margin-top: -120px;}
+#catalogo h1 {font-size: 20px; display: inline-block; margin-right: 40px;}
+#catalogo a {background-color: #f04e23; border: solid 1px #f04e23; border-radius: 55px; color: #fff; font-size: 18px; padding: 18px 117px;  transition: all 0.3s;}
+#catalogo a:hover {background-color: #fff; border: solid 1px #f04e23; color: #f04e23; text-decoration: none;}
+#catalogo .row {background: #393b3f; padding: 50px 0 40px;   margin: 0;}
+#comprar {padding-bottom: 83px;}
+#comprar .container .row > div .content {height: 377px; max-height: 377px;}
+#comprar .container .row > div:first-child .content {background: url(../images/home/bg-section01.jpg) no-repeat center; padding: 72px 0 0 54px;}
+#comprar .container .row > div:first-child a {color: #000;}
+#comprar .container .row > div:last-child .content {background: url(../images/home/DERIG_FUNDO_TOTAL_IMAGENS_GUIA_TORQUE.png) no-repeat center; color: #fff; padding: 72px 0 0 38px;}
+#comprar .container .row > div:last-child a {color: #fff;}
+.produtosHome {background: none!important; padding: 0 15px!important;}
+#historia {background: url(../images/home/bg-section02.png) no-repeat; background-size: 100%;}
+#historia .container {padding: 105px 0 311px 20px;}
+#historia h1 {font-size: 21px;}
+#historia a {color: #000; display: inline-block; font-weight: 700; margin-top: 50px;}
+#biotiteHome {background: url(../images/home/DERIG_IMG_HOME_V5_CA.jpg) no-repeat; background-size: 100%; color: #fff;}
+#biotiteHome .container {padding: 123px 0 400px 0;}
+#biotiteHome a {color: #fff; display: inline-block; font-weight: 700; margin-top: 40px;}
+#biotiteHome h1 {font-size: 36px; line-height: 50px; margin-bottom: 30px;}
+#biotiteHome h1 span {font-weight: 700;}
+#noticiasHome .container {padding: 170px 0;}
+#noticiasHome .container .row {margin: 0; width: 100%;}
+#noticiasHome h1 {font-size: 24px; color: #f04e23; margin-bottom: 60px;}
+#noticiasHome .content {background-color: #2e2e2e;}
+#noticiasHome .content h1 a, #noticiasHome .content > a {color: #fff; padding: 0 30px;}
+#noticiasHome .content > a {display: inline-block; font-size: 12px; margin-bottom: 50px;}
+#noticiasHome .content img {margin-bottom: 50px; max-width: 100%; width: 100%;}
+#newsletter {margin-top: 70px; padding-bottom: 121px;}
+#newsletter h1 {color: #3b3d41; font-size: 24px;  margin-bottom: 44px; text-align: center;}
+#newsletter form {text-align: center;}
+#newsletter form input[type=email] {color: #adadad; font-size: 18px; padding: 25px; width: 100%; max-width: 391px;}
+#newsletter #btnSend {transition: all .2s; border: solid 1px #f04e23;background-color: #f04e23; color: #fff; font-size: 18px; font-weight: 700; margin-left: 10px; padding: 26px 35px;}
+#newsletter #btnSend:hover {background-color: #fff; border: solid 1px #f04e23; color: #f04e23;}
+footer {background-color: #252729; color: #fff; font-size: 14px;}
+footer a {color: #fff;}
+footer a:hover {color: #f04e23; text-decoration: none;}
+footer h2 {font-size: 16px; font-weight: 700;}
+footer ul li {margin-bottom: 10px;}
+footer .row:first-child {border-bottom: solid 1px #46484a; padding: 100px 10px 70px;}
+footer .row:last-child {padding: 40px 72px;}
+footer p {font-size: 14px;}
+footer i { margin-right: 10px;}
+footer #contatoInfo {float: right;}
+footer #contatoInfo div {padding: 0;}
+footer #contatoInfo p span {font-size: 22px; margin-bottom: 30px; margin-top: 10px;}
+footer #footerLogo {margin-bottom: 50px;}
+#headerInterno {background: linear-gradient(#101112,#3B3D41),  url(../images/layout/bg-grafismo-header.png) bottom; background-repeat: repeat-x;}
+#headerInterno .container {padding: 74px 15px;}
+#headerInterno h1 {color: #fff; font-size: 32px;}
+#headerInterno p, #headerInterno p a {color: #f04e23; font-size: 12px!important;}
+/*QUEM SOMOS*/
+#quemSomos {color: #484848;}
+#quemSomos p {font-size: 16px;}
+#sobreDestaque {background: url(../images/quemsomos/bg-quemsomos01.png) no-repeat; background-size: 100%; padding: 75px 0 600px 0;}
+#sobreDestaque h1 span strong {color: #f04e23; font-weight: 700;}
+#sobreDestaque p {font-size: 16px; margin-top: 22px;}
+#infra .container .row p {text-align: right;}
+#infra .container .row, #controleQualidade .container .row, #infra2 .container .row {display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-align: center; -webkit-align-items: center; -webkit-box-align: center; align-items: center;}
+#quemSomos #infra img {border-top-right-radius: 200px; border-bottom-right-radius: 200px;}
+#quemSomos #infra2 img {border-top-left-radius: 200px!important; border-bottom-left-radius: 200px;}
+#controleQualidade {padding: 88px 0 166px 0;}
+#controleQualidade h1 {font-size: 24px; font-weight: 700; margin-bottom: 20px;}
+#controleQualidade ul li {display: inline-block; width: 33%;}
+#certificados {background: url(../images/quemsomos/bg-quemsomos02.png) no-repeat; background-size: 100%; padding: 121px 0 350px 0;}
+#certificados p {margin-bottom: 35px;}
+#infra2 .container {padding: 72px 15px;}
+/*BACKGROUND IMAGE PAGES*/
+#contato #content, #trabalheConosco #content, #ondeComprar #content, #jaSouCadastrado #content, #perguntasFrequentes #content, #downloads #content, #downloadsList #content, #noticias #content, #produtoTpl1 #content, #produtos #content {background: url(../images/layout/bg.png) top no-repeat; background-size: 100%;}
+/*CONTATO*/
+#contato #content .container {padding: 119px 15px 107px 15px;}
+#contato #content h1 {color: #f04e23; font-weight: 700; margin-bottom: 32px;}
+#contato, #contato #content a {color: #212336;}
+#contato #content a:hover {color: #f04e23; text-decoration: none;}
+#contato #content p, #contato #content h1, #contato #content a {font-size: 20px;}
+#contato #content ul {margin-bottom: 60px;}
+#contato #content #fones li {display: inline-block;}
+#contato #content #fones li:first-child {margin-right: 46px;}
+#contato #content #fones a {font-size: 24px;}
+#contato #content span {display: block; font-size: 10px;}
+#contato #content span i {margin-right: 5px;}
+#contato #content #trabalheConosco span a {color: #f04e23;}
+#contato #content #trabalheConosco span a:hover {text-decoration: underline;}
+#contato #content form label, #trabalheConosco #content form label, .cadastro #content form label {display: block;}
+#contato #content form input[type=text], #contato #content form input[type=email], #contato #content form select, #contato #content form textarea, #trabalheConosco #content form input[type=text], #trabalheConosco #content form input[type=email], .cadastro #content form input[type=text], .cadastro #content form input[type=email] {border: solid 1px #cccccc; margin-bottom: 31px; padding: 10px; width: 100%;}
+#contato #content form input[type=checkbox] {margin-bottom: 31px;}
+#contato #content form textarea {height: 218px; resize: none;}
+#contato #content form input[type=submit], #trabalheConosco #content form input[type=submit], .cadastro #content form input[type=submit] {background-color: #f04e23; border: none; border-radius: 53px; color: #fff; padding: 5px 35px;}
+#contato #content form input[type=submit]:hover, #trabalheConosco #content form input[type=submit]:hover {background-color: #fff; border: solid 1px #f04e23; color: #f04e23;}
+/*TRABALHE CONOSCO*/
+#trabalheConosco #content .container {padding: 143px 15px 128px 15px;}
+#trabalheConosco #content p {font-size: 24px;}
+#trabalheConosco #content form #ddd {margin-right: 30px; width: 67px;}
+#trabalheConosco #content form #fone {width: 179px;}
+#trabalheConosco #submitContainer {margin-top: 100px; text-align: center; width: 100%;}
+#trabalheConosco #submitContainer input[type=submit] {padding: 5px 75px!important;}
+#trabalheConosco form .col-sm-6, #trabalheConosco form .col-sm-4 {padding: 0;}
+#trabalheConosco #inputField {background: none; border-radius: 0;}
+.input-group-btn {width: auto;}
+.btn-primary {background: #fff; border: solid 1px #f04e23; border-radius: 26px!important; color: #f04e23; margin-left: 26px!important;}
+/*ONDE COMPRAR*/
+#ondeComprar #content a {color: #212326; font-size: 20px;}
+#ondeComprar #content {padding: 133px 15px 190px 15px;}
+#ondeComprar #content a h2 {display: inline-block; color: #3b3d41; font-size: 20px; font-weight: 700;}
+#ondeComprar #content  img {display: inline-block; margin-right: 30px;}
+#ondeComprar #content #atendimento .container {background-color: #f7f7f7; margin-top: 99px; padding: 57px 132px 71px 132px;}
+#ondeComprar #content #atendimento h1 {color: #f04e23; font-size: 20px; margin-bottom: 42px;}
+#ondeComprar #content #atendimento h2 {font-size: 10px; margin-bottom: 5px;}
+#ondeComprar #content #atendimento h2 i {margin-right: 5px;}
+#representantes {     margin-top: 60px; }
+#ondeComprar #content #representantes h1, #ondeComprar #content #representantes h2 {color: #f04e23; font-size: 24px; font-weight: 700; margin-bottom: 60px; text-align: center;}
+#ondeComprar #content #representantes h2 {font-size: 20px; margin-top: 100px;}
+#ondeComprar #content #representantes h3 {color: #f04e23;}
+#ondeComprar #content #representantes #dadosMapa h2 {text-align: left;}
+#ondeComprar #content #representantes .table-responsive {margin: auto; max-width: 800px; width: 100%;}
+#ondeComprar #content #representantes table tr:nth-child(even) {background-color: #fafafa;}
+#ondeComprar #content #representantes table thead tr {background-color: #3b3d41!important; color: #fff;}
+#ondeComprar #content #representantes table thead th, #ondeComprar #content #representantes table tr td {font-weight: 400; padding: 7px 0 7px 29px;}
+/*MAP*/
+#svg-map path {fill:#3b3d41;}
+#svg-map text {fill:#fff; font:12px Arial-BoldMT, sans-serif;}
+#svg-map a{text-decoration:none }
+#svg-map a:hover { cursor:pointer; text-decoration:none }
+#svg-map .circle { fill:#888 }
+#svg-map a:hover .circle { fill:#000 !important; cursor:pointer }
+#dadosMapa h2 {background: url(/images/layout/linha-peq.png) no-repeat bottom left; color: #f04e23; font-size: 16px; font-weight: 700; margin-bottom: 55px; padding-bottom: 10px;}
+#dadosMapa p a {font-size: 24px; margin-bottom: 15px; display: inline-block;}
+#dadosMapa h3 {font-size: 16px; font-weight: 400; margin-top: 60px;}
+#dadosMapa h4 {color: #3b3d41; font-size: 12px; margin-bottom: 0;}
+.hasContent:hover { cursor: pointer!important; }
+.hasContent { cursor: pointer!important; }
+#amazonas path:first-child, #paraiba path:first-child, #mattogrossodosul path:first-child, #amapa path:first-child, #para path:first-child, #pernambuco path:first-child, #alagoas path:first-child, #goias path:first-child, #distritofederal path:first-child, #saopaulo path:first-child, #riodejaneiro path:first-child, first-child, #santacatarina path:first-child, #riograndedosul path:first-child, #espiritosanto path:first-child, #sergipe path:first-child, #riograndedonorte path:first-child { fill:#f04e23!important; }
+#amazonas:hover path, #paraiba:hover path, #mattogrossodosul:hover path, #amapa:hover path, #para:hover path, #pernambuco:hover path, #alagoas:hover path, #goias:hover path, #distritofederal:hover path, #saopaulo:hover path, #riodejaneiro:hover path, #santacatarina:hover path, #riograndedosul:hover path, #espiritosanto:hover path, #sergipe:hover path, #riograndedonorte:hover path { fill:#b13818 !important }
+.hasContent path:hover { fill:#b13818 !important }
+.cadastro #content {padding-bottom: 161px; padding-top: 146px}
+.cadastro #content h2 {color: #f04e23; font-size: 20px; margin-bottom: 53px; margin-top: 100px; text-align: center;}
+.cadastro #content h2:first-child {margin-top: 0;}
+.cadastro #content form {margin: auto; max-width: 552px; width: 100%;}
+.cadastro #content form .form-group > label {padding-left: 15px;}
+.cadastro #content form .form-group > label span {color: #a8adb4; font-size: 12px; margin-left: 10px;}
+.cadastro #content form .form-group input {margin-bottom: 15px;}
+.cadastro #content form #enviar {text-align: center;}
+.cadastro #content form .form-group .form-control {border-radius: 0;}
+.form-control:focus {outline-color: #f04e23; box-shadow: 0 0 5px #f04e23; border-color: #f04e23;}
+.cadastro #content form .form-group a {color: #3b3d41; font-size: 16px; text-decoration: underline;}
+.informacoesCompra #content #atendimento .container {margin-top: 54px!important;}
+.informacoesCompra #content > p {margin-top: 100px; text-align: center;}
+.informacoesCompra #content > p a {font-size: 16px!important;}
+.informacoesCompra #content > p img {margin-right: 10px!important; width: 25px;}
+/*PERGUNTAS FREQUENTES*/
+#perguntasFrequentes #content {padding-top: 128px; padding-bottom: 238px;}
+#perguntasFrequentes #content .faq .faqContent {display: none;font-style: italic; margin-bottom: 35px;margin-left: 20px;}
+#perguntasFrequentes #content h2 {color: #f04e23; font-size: 20px; margin-bottom: 20px; margin-top: 60px;}
+#perguntasFrequentes #content .faq h1:before {content: "• "; color: #f04e23;}
+#perguntasFrequentes #content h2:first-child {margin-top: 0;}
+#perguntasFrequentes #content article h1 {color: #484848; font-size: 16px;     cursor: pointer;}
+#perguntasFrequentes #content .faq header h1:hover {color: #f04e23;}
+/*DONLOADS*/
+#downloads #content {padding-top: 110px;}
+#downloads #content .container .row div {margin-bottom: 110px;}
+#downloads #content img {margin: auto;}
+#downloads #content h2 {color: #101112; font-size: 24px; text-align: center;}
+#downloadsList #content {padding: 116px 0;}
+#downloadsList #content .row {margin-bottom: 50px;}
+#downloadsList #content .downloadListContainer {align-items: center; display: flex; padding: 40px 0;}
+#downloadsList #content .downloadListContainer img {float: left; margin-right: 30px; max-width: 180px;}
+#downloadsList #content .downloadListContainer h2 {color: #3b3d41; font-size: 24px; font-weight: 700;}
+#downloadsList #content .downloadListContainer a {border: solid 1px #f04e23; border-radius: 26px; color: #f04e23; display: inline-block; margin-top: 38px; padding: 7px 39px;}
+#downloadsList #content .downloadListContainer a:hover {background-color: #f04e23; color: #fff; text-decoration: none;}
+#downloads #content #membro h2 {text-align: left;background: url(/images/layout/linha-peq.png) no-repeat; background-position: 0px 100%; color: #3b3d41; font-size: 20px; padding-bottom: 15px; margin-top: 10px; font-weight: bold;}
+#downloads #content #membro ul {list-style: initial; list-style-position: inside;}
+#downloads #content #membro IMG {border-radius: 100%;object-fit: cover;}
+#casos img{
+  width: 100%;
+}
+#casos h4{
+  text-align: center;
+}
+.conselhoContent a:hover{cursor: pointer}
+.casosContent a:hover{cursor: pointer}
+#downloadsList #content #listaCasos a:hover{cursor: pointer;text-decoration: none;}
+#downloadsList #content #listaCasos h2{
+  background: url(/images/layout/linha-peq.png) no-repeat;
+  background-position: 0px 100%;
+  color: #3b3d41;
+  font-size: 20px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  font-weight: bold;}
+#downloadsList #content #listaCasos ul {list-style: initial;}
+#downloadsList #content #listaCasos ul li a {color: #333;}
+#downloadsList #content #listaCasos ul li a:hover {color: #f04e23;}
+/*NOTICIAS*/
+#noticias #content {padding-bottom: 131px; padding-top: 106px;}
+#noticias #content article {margin-bottom: 64px;}
+#noticias #content article h1, #noticias #content article p, #noticias #content article a {color: #212326;}
+#noticias #content .data {color: #f04e23; font-size: 16px;}
+#noticias #content article h1 {font-size: 20px; margin-top: 10px;}
+#noticias #content article p {font-size: 16px; margin-bottom: 10px;}
+#noticias #content article a {display: inline-block; text-decoration: underline;}
+#noticias #content #paginationContainer {text-align: center;}
+#noticias #content #paginationContainer ul {background-color: #ededed; border-radius: 50px; display: inline-block; padding: 4px;}
+#noticias #content #paginationContainer ul li {display: inline-block;}
+#noticias #content #paginationContainer ul li:first-child, #noticias #content #paginationContainer ul li:last-child {background-color: #fff; border-radius: 50%; padding: 2px 7px;}
+#noticias #content #paginationContainer ul li {margin: 0 15px;}
+#noticias #content #paginationContainer ul li:first-child {margin-right: 40px; margin-left: 0;}
+#noticias #content #paginationContainer ul li:last-child {margin-left: 40px; margin-right: 0;}
+#noticias #content #paginationContainer ul li a {color: #434445;}
+#noticias #content #paginationContainer ul li a .current, #noticias #content #paginationContainer ul li a:hover {color: #f04e23;}
+#noticias #myCarousel {border: solid 1px #ededed; margin-bottom: 115px;}
+#noticias .carousel-inner>.item:before, .carousel-inner>.item:after {content: ""; display: table; clear: both;}
+#noticias .carousel-inner>.item>img {float: right; max-width: 50%;}
+#noticias .carousel-caption {display: flex; justify-content: center; flex-direction: column; top: 0; bottom: 0; left: 0; max-width: 40%; text-align: left; padding: 0 31px; text-shadow: none;}
+#noticias .carousel-caption h2 {color: #f04e23; font-size: 20px; font-weight: 700; margin-bottom: 15px;}
+#noticias .carousel-caption p {color: #484848; font-size: 16px; margin-bottom: 30px;}
+#noticias .carousel-caption a {color: #f04e23; display: inline-block; font-size: 16px;}
+#noticias .carousel-indicators {bottom: -40px; left: auto; right: 0; text-align: right;}
+#noticias .carousel-indicators li {background-color: #a8adb4; height: 11px; width: 11px;}
+#noticias .carousel-indicators .active {background-color: #f04e23!important; height: 11px; width: 11px;}
+/*BIOTITE*/
+#biotite {background: #353639 url(../images/biotite/bg-biotite-implante.png) no-repeat left top;}
+#biotite #content {color: #fff; font-size: 16px; padding-bottom: 58px; padding-top: 150px;}
+#biotite #content #destaqueBiotite h1 {font-size: 24px; font-weight: 400; margin-bottom: 50px;}
+#biotite #content #destaqueBiotite h2 {font-size: 36px; font-weight: 700;}
+#biotite #content #microscopia {padding-top: 134px;}
+#biotite #content #microscopia .row:first-child, #biotite #content #microscopia .row:nth-child(3) {text-align: center;}
+#biotite #content #microscopia h1 {font-size: 24px; font-weight: 700; margin-bottom: 25px;}
+#biotite #content #microscopia p {margin-bottom: 50px;}
+#biotite #content #microscopia a {transition: all 0.2s;background-color: #f04e23; border: solid 2px #f04e23; border-radius: 39px; color: #fff; display: inline-block; font-size: 16px; margin-top: 143px; margin-bottom: 162px; padding: 21px 70px;}
+#biotite #content #microscopia a:hover {background-color: transparent; border: solid 2px #f04e23; color: #f04e23; text-decoration: none;}
+#biotite #content #microscopia .row:last-child p {color: #6e6e6e; font-size: 12px; margin-bottom: 0;}
+/*PRODUTOS*/
+#produtos #content {padding-bottom: 227px; padding-top: 145px;}
+#produtos #content h1 {font-size: 24px; margin-bottom: 35px; font-weight: bold;}
+#produtos #content p {font-size: 16px; margin-bottom: 122px;}
+#produtos #content .prodContent > div {height: 350px; margin-bottom: 35px; padding-top: 25px; }
+#produtos #content .prodContent 	{background-image: linear-gradient(#ffffff, #f8f8f8); padding-top: 25px; transition: all 3s ease 3s;}
+#produtos #content .prodContent:hover 	{background-image: linear-gradient(#ffffff, #efefef);}
+#produtos #content #implantes 		{background-image: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_IMPLANTES.jpg);		background-repeat: no-repeat; background-position: right top;}
+#produtos #content #componentes 	{background-image: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_COMPONENTES2.jpg); 	background-repeat: no-repeat; background-position: left bottom;}
+#produtos #content #kits 			{background-image: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_KITS.jpg) 	;		background-repeat: no-repeat; background-position: left bottom;}
+#produtos #content #instrumentais 	{background-image: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_INSTRUMENTAIS.png); 	background-repeat: no-repeat; background-position: left bottom;}
+#produtos #content #motor 			{background-image: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_MOTOR.png) 	;		background-repeat: no-repeat; background-position: left bottom;}
+#produtos #content #biomateriais {background: url(../images/produtos/DERIG_FUNDO_TOTAL_IMAGENS_BIOMATERIAIS.png) ;		background-repeat: no-repeat; background-position: left bottom;}
+#produtos a { text-decoration: none; }
+#produtos #content .prodContent h2 {background: url(/images/layout/linha-peq.png) no-repeat; background-position: 29px 100%; color: #3b3d41; font-size: 24px; padding-bottom: 15px; padding-left: 29px; font-weight: bold;}
+#produtos #content .prodContent h2 i {border: solid 1px #f04e23; border-radius: 50px; color: #f04e23; font-size: 10px; padding: 3px 5px;}
+#produtos #content .prodContent #implantes h2, #produtos #content .prodContent #componentes h2, #produtos #content .prodContent #kits h2 {color: #fff;}
+#produtos #content .listaInternaProdutos .prodContent > div {height: auto; padding-bottom: 39px;}
+#produtos #content .listaInternaProdutos .prodContent h2 {background: none; padding-bottom: 0; margin: 0; margin-bottom: 10px; text-align: left;}
+#produtos #content .listaInternaProdutos .prodContent h3 {background: url(/images/layout/linha-peq.png) no-repeat; background-position: 29px 100%; color: #3b3d41; padding-bottom: 15px; padding-left: 29px; margin: 0; font-size: 12px; text-align: left;}
+#produtos #content .listaInternaProdutos .prodContent h3 span {display: block;}
+#produtos #content .listaInternaProdutos .prodContent h3 i {border: solid 1px #f04e23; border-radius: 50px; color: #f04e23; font-size: 8px; padding: 1px 3px;}
+#produtos #content #listaInternaKits .prodContent img {position: absolute; bottom: 60px; right: 40px;}
+#produtos #content .listaInternaProdutos #btnVoltar {background-color: #cccccc; border-radius: 21px; color: #fff; display: inline-block; margin-bottom: 50px; padding: 10px 30px;}
+#produtos #content .listaInternaProdutos #btnVoltar i {margin-right: 10px;}
+#produtos #content .listaInternaProdutos #btnVoltar:hover {background-color: #f04e23; text-decoration: none;}
+#produtos #content .internoImg #componente1 {background: url(../images/produtos/desenhoconemorse.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #componente2 {background: url(../images/produtos/desenhobiodent.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #componente3 {background: url(../images/produtos/desenhotriplocanal.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #implante1, #produtos #content .internoImg #implante2 {background: url(../images/produtos/desenhoconemorse.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #implante3 {background: url(../images/produtos/desenhotriplocanal.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #implante4 {background: url(../images/produtos/desenhotriplocanareduzido.png) no-repeat; background-position: 92% 0;}
+#produtos #content .internoImg #implante5, #produtos #content .internoImg #implante6 {background: url(../images/produtos/desenhobiodent.png) no-repeat; background-position: 92% 0;}
+#produtos #content #listaInternaimplantes .prodContent > div {height: 500px; text-align: center;}
+#produtos #content #listaInternaimplantes .prodContent img {display: inline-block; margin: 55px 0;}
+#produtos #content #listaInternaKits .prodContent > div {height: 380px;}
+#produtos #content #listaInternaKits .prodContent h2 {font-size: 12px;}
+#produtos #content #listaInternaKits .prodContent h3 {font-size: 24px; font-weight: bold;}
+#produtos #content #listaInternaInstrumentais .prodContent h2 {background: url(/images/layout/linha-peq.png) no-repeat; background-position: 29px 100%; padding-bottom: 15px;}
+#imgMedidasImplante {display: block; margin-left: auto; margin-right: auto; max-width: 250px;}
+/*PRODUTOS TEMPLATES*/
+#produtoTpl1 #content {padding-bottom: 152px; padding-top: 100px;}
+#produtoTpl1 #content p {color: #484848;}
+#produtoTpl1 #content #resumo {background-color: #fff; border: solid 1px #ededed; padding: 60px 30px 30px 30px;}
+#produtoTpl1 #content #resumo h1 {background: none!important; color: #212326; font-size: 32px; font-weight: 700; margin-bottom: 50px; margin-top: 0!important}
+#produtoTpl1 #content #resumo h1 span {font-size: 14px; font-weight: 400;}
+#produtoTpl1 #content #instrucoes { color: #484848; }
+#produtoTpl1 #content #resumo #comprar {transition: all 0.15s; background-color: #f04e23; border: solid 1px #f04e23; border-radius: 53px; color: #fff; display: inline-block; margin-top: 40px; margin-left: 10px; padding: 10px 40px;}
+#produtoTpl1 #content #resumo #comprar:hover {background-color: #fff; border: solid 1px #f04e23; color: #f04e23; text-decoration: none;}
+#produtoTpl1 #content #descricao {padding-bottom: 84px; padding-top: 143px;}
+#produtoTpl1 ul { list-style: initial; list-style-position: inside; }
+#produtoTpl1 nav ul {background-color: #a8adb4; margin-top: 60px; text-align: center;}
+#produtoTpl1 nav ul li {display: inline-block; margin-right: 42px; font-size: 14px;}
+#produtoTpl1 nav ul li:last-child {margin-right: 0;}
+#produtoTpl1 nav ul li a {color: #fff; display: block; padding: 15px 0;}
+#produtoTpl1 nav ul li a:hover {text-decoration: none;}
+#produtoTpl1 #content h1 {background: url(../images/layout/linha-gnd.png) no-repeat bottom left; color: #f04e23; font-weight: bold; font-size: 20px; margin-bottom: 41px; margin-top: 107px; padding-bottom: 20px;}
+#produtoTpl1 #content #caracteristicas h1 {margin-top: 0;}
+#produtoTpl1 #content h3 {color: #212326; font-size: 18px; margin-bottom: 20px; font-weight: bold;}
+#produtoTpl1 #content #descricao .col-md-6 {padding: 0;}
+#produtoTpl1 #content table {font-size: 14px;}
+td[rowspan]:nth-child(odd) { background: white; }
+td[colspan] { padding: 30px!important;  background: white!important; border-bottom: 2px solid #dddddd!important; border-top: 2px solid #dddddd!important;}
+table {border-bottom: 2px solid #dddddd!important;}
+.kitcompleto { color: white; background-color: #f04e23!important; font-weight: bold; }
+.modal-content {background: #fff url(../images/produtos/implantes/modal/modal-lado.png) no-repeat left center;}
+.modal-dialog {max-width: 650px; width: 100%;}
+.modal-header {border: none;}
+.close {opacity: 1;}
+.modal-header .close i {color: #f04e23; font-size: 30px;}
+.modal-body {padding: 40px 55px 90px 245px; text-align: center;}
+.modal-body p span {color: #f04e23; display: inline; font-weight: 700;}
+.modal-body p {text-align: left;}
+.modal-body img {margin-top: 35px;}
+.modal {
+text-align: center;
+padding: 0!important;
+}
+.modal:before {
+content: '';
+display: inline-block;
+height: 100%;
+vertical-align: middle;
+margin-right: -4px;
+}
+.modal-dialog {
+display: inline-block;
+text-align: left;
+vertical-align: middle;
+}
+/*
+#produtoTpl1 #content table:after { content: ""; position: absolute;
+right: 0;
+width: 30px;
+height: 100%;
+background-image: -webkit-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+background-image: -moz-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+background-image: -ms-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+background-image: -o-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+background-image: linear-gradient(0deg, rgba(255,255,255,.5), #fff); }*/
+#produtoTpl1 #content table tr:nth-child(even) {background-color: #fdfdfd;}
+#produtoTpl1 #content table tr:nth-child(odd) {background-color: #fdfdfd;}
+/*#produtoTpl1 #content table tr:hover {background-color: #eaeaea; }*/
+#produtoTpl1 #content table tr {transition: all 0.2s;}
+/*#produtoTpl1 #content table tr td:nth-child(4) {background-color: #f5f5f5;}*/
+#produtoTpl1 #content table tr th, .table-head {background: #3b3d41!important; color: #fff; border: none; width: 300px; border-bottom: 1px solid #f04e23!important;}
+#produtoTpl1 #content table tr td, #produtoTpl1 #content table tr th { 
+/* border: none; */
+padding: 15px 5px; text-align: center; vertical-align: middle;
+}
+#produtoTpl1 #content #brocas table tr th {padding: 13px 25px;}
+#produtoTpl1 #content #brocas table tr:first-child {background-color: #fff;}
+#produtoTpl1 #content #brocas table tr td:nth-child(4) {background-color: transparent;}
+#produtoTpl1 #content .fa-check {color: #185801;}
+#produtoTpl1 #content .fa-times-circle {color: #0050c7;}
+#produtoTpl1 #content #chaves table {float: left; width: 100%;}
+#produtoTpl1 #content #imgChave {max-width: 20%; display: none;}
+#produtoTpl1 #content #chaves p {margin-bottom: 101px;}
+#produtoTpl1 #content #caracteristicas ul {list-style: none!important;}
+#produtoTpl1 #content #caracteristicas ul li:before {color: #f04e23; content: ' \25CF'; font-size: 10px; margin-right: 5px;}
+#produtoTpl1 #content #caracteristicas ul li ul {list-style: none; padding-left: 20px;}
