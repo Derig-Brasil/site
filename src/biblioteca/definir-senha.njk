@@ -1,0 +1,64 @@
+---
+layout: layout.njk
+title: Definir nova senha | Biblioteca Digital | Dérig
+excludeFromSitemap: true
+---
+<div id="ondeComprar" class="cadastro">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > <a href="/biblioteca">Biblioteca Digital</a> > Definir nova senha</p>
+      <h1>Definir nova senha</h1>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container py-4">
+      <a id="btnVoltar" href="/biblioteca/login"><i class="fas fa-long-arrow-alt-left"></i>VOLTAR</a>
+      <p>Digite sua nova senha abaixo.</p>
+
+      <form id="reset-form" class="form-horizontal" action="/api/biblioteca/password/reset" method="post" onsubmit="return onReset(event)">
+        <input type="hidden" id="token" name="token" />
+
+        <div class="form-group">
+          <label for="password">Nova senha</label>
+          <div class="col-sm-12">
+            <input type="password" id="password" name="password" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="form-group" id="enviar">
+          <input type="submit" value="Definir senha" />
+        </div>
+      </form>
+
+      <div id="reset-success" style="display:none; margin-top: 16px;">
+        Sua senha foi alterada com sucesso. Você já pode <a href="/biblioteca/login">fazer login</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function setTokenFromUrl(){
+  const params = new URLSearchParams(location.search);
+  const token = params.get('token') || '';
+  document.getElementById('token').value = token;
+})();
+
+async function onReset(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const res = await fetch(form.action, { method: 'POST', body: data, credentials: 'include' });
+  try{
+    const json = await res.json();
+    if(json && json.success){
+      form.style.display = 'none';
+      document.getElementById('reset-success').style.display = 'block';
+      return false;
+    }
+  }catch(_){ }
+  alert('Não foi possível redefinir a senha. Verifique o link enviado por e-mail e tente novamente.');
+  return false;
+}
+</script>

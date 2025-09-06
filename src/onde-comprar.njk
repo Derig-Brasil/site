@@ -1,0 +1,75 @@
+---
+layout: layout.njk
+title: Onde Comprar | Dérig
+description: Confira a lista de nossos representantes e encontre o mais próximo de você.
+---
+
+<div id="ondeComprar">
+	<div id="headerInterno">
+		<div class="container">
+			<p><a href="/">Home</a> > Onde comprar</p>
+			<h1>Onde Comprar</h1>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-6 col-sm-6">
+					<h2>
+						<a href="/informacoes">
+							<img src="/images/ondecomprar/ico-jasoucadastrado.png" alt="Ícone de porta">Já sou cadastrado
+						</a>
+					</h2>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<a href="/cadastro">
+						<img src="/images/ondecomprar/ico-souclientenovo.png" alt="Ícone de pessoa">Sou cliente novo
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<section id="atendimento">
+			<div class="container">
+				<div class="row">
+					<h1>Canais de atendimento</h1>
+					<div class="col-md-3 col-sm-3">
+						<h2><i class="fas fa-phone-volume"></i>Atendimento ao cliente</h2>
+						<a href="tel:08007771991">0800 777 1991</a>
+						<a style="display: block;" href="https://api.whatsapp.com/send?phone=5511982320041">(11) 98232-0041</a>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<a id="fone2" href="tel:1141618090">(11) 4161 8090</a>
+						<a style="display: none;" href="tel:1141681991">(11) 4168 1991</a>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<h2><i class="fas fa-envelope"></i>E-mail</h2>
+						<a href="mailto:vendas@derig.com.br">vendas@derig.com.br</a>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<h2><i class="fas fa-envelope"></i>E-mail</h2>
+						<a href="mailto:derig@derig.com.br">derig@derig.com.br</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="representantes">
+			<div class="container">
+				<h1>Representantes</h1>
+				{% include "components/interactive-map.njk" %}
+
+				<h2>Representantes no exterior</h2>
+
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<h3>Chile</h3>
+						<p><strong>GP Dental</strong> | jorgevicen77@gmail.com</p>
+						<p>+56 9 7981 1261</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

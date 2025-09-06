@@ -1,0 +1,24 @@
+{
+  "name": "derig-site",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve --port=8080",
+    "dev:worker": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "migrate:prod": "wrangler d1 migrations apply prod-db --remote",
+    "deploy:with-migrations": "npm run migrate:prod && npm run deploy",
+    "migrate:test": "wrangler d1 migrations apply site-test --env test --remote",
+    "deploy:test": "npm run build && npm run migrate:test && wrangler deploy --env test"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@cloudflare/workers-types": "^4.20250831.0",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.33.1"
+  }
+}

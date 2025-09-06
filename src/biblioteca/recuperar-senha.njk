@@ -1,0 +1,53 @@
+---
+layout: layout.njk
+title: Recuperar senha | Biblioteca Digital | Dérig
+excludeFromSitemap: true
+---
+<div id="ondeComprar" class="cadastro">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > <a href="/biblioteca">Biblioteca Digital</a> > Recuperar senha</p>
+      <h1>Recuperar senha</h1>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container py-4">
+      <a id="btnVoltar" href="/biblioteca/login"><i class="fas fa-long-arrow-alt-left"></i>VOLTAR</a>
+
+      <form id="forgot-form" class="form-horizontal" action="/api/biblioteca/password/forgot" method="post" onsubmit="return onForgot(event)">
+        <div class="form-group">
+          <p>Informe seu e-mail cadastrado para receber um link de redefinição.</p>
+
+          <label for="email">E-mail</label>
+          <div class="col-sm-12">
+            <input type="email" id="email" name="email" class="form-control" maxlength="100" required />
+          </div>
+        </div>
+
+        <div class="form-group" id="enviar">
+          <input type="submit" value="Enviar link de redefinição" />
+        </div>
+      </form>
+
+
+      <div id="forgot-success" style="display:none; margin-top: 16px;">
+        Se o seu e-mail estiver em nossa base de dados, você receberá um link para redefinir sua senha.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function onForgot(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try{
+    await fetch(form.action, { method: 'POST', body: data, credentials: 'include' });
+  }catch(_){/* ignore */}
+  form.style.display = 'none';
+  document.getElementById('forgot-success').style.display = 'block';
+  return false;
+}
+</script>
