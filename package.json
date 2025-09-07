@@ -9,7 +9,7 @@
     "serve": "eleventy --serve --port=8080",
     "dev:worker": "wrangler dev",
     "deploy": "wrangler deploy",
-    "migrate:prod": "wrangler d1 migrations apply prod-db --remote",
+    "migrate:prod": "wrangler d1 migrations apply site-prod --remote",
     "deploy:with-migrations": "npm run migrate:prod && npm run deploy",
     "migrate:test": "wrangler d1 migrations apply site-test --env test --remote",
     "deploy:test": "npm run build && npm run migrate:test && wrangler deploy --env test"

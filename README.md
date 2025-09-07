@@ -66,7 +66,7 @@ npm run deploy
 - `npm run serve` – Run Eleventy’s dev server on http://localhost:8080 (does not run the Worker/API).
 - `npm run dev:worker` – Start Wrangler dev (serves `_site/` and `/api/*`) at http://localhost:8787.
 - `npm run deploy` – Deploy the Worker to Cloudflare (default/prod environment).
-- `npm run migrate:prod` – Apply D1 migrations to the `prod-db` database (remote).
+- `npm run migrate:prod` – Apply D1 migrations to the `site-prod` database (remote).
 - `npm run deploy:with-migrations` – Run prod migrations then deploy to Cloudflare.
 - `npm run migrate:test` – Apply D1 migrations to the `site-test` database using `--env test` (remote).
 - `npm run deploy:test` – Build, run test migrations, then deploy with `--env test`.
