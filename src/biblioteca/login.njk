@@ -1,0 +1,67 @@
+---
+layout: layout.njk
+title: Acessar Biblioteca
+excludeFromSitemap: true
+---
+<div id="ondeComprar" class="cadastro">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > <a href="/biblioteca">Biblioteca Digital</a> > Login</p>
+      <h1>Login</h1>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container py-4">
+      <form id="loginForm" class="form-horizontal" method="POST" action="/api/biblioteca/login" onsubmit="return onLogin(event)">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <h1>Entrar</h1>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <div class="col-sm-12">
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <div class="col-sm-12">
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <a href="/biblioteca/recuperar-senha">Esqueci minha senha</a>
+          </div>
+        </div>
+
+        <p>Não tem conta? <a href="/biblioteca/registro">Cadastre-se</a></p>
+        <br />
+
+        <div class="form-group" id="enviar">
+          <input type="submit" value="Entrar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+async function onLogin(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const res = await fetch(form.action, { method: 'POST', body: data, credentials: 'include' });
+  try{
+    const json = await res.json();
+    if(json && json.success){
+      location.href = '/biblioteca';
+      return false;
+    }
+  }catch(_){ }
+  alert('Falha no login. Verifique suas credenciais.');
+  return false;
+}
+</script>

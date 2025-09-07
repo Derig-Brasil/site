@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {# Iterate over all generated pages #}
+  {% for item in collections.all %}
+    {% set u = item.url or '' %}
+    {% if u and (u != '/404.html') and (u != '/404/') and not (item.data and item.data.excludeFromSitemap) %}
+    <url>
+      <loc>{{ siteUrl }}{{ u }}</loc>
+      {% if item.date %}<lastmod>{{ item.date | date('iso') }}</lastmod>{% endif %}
+    </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

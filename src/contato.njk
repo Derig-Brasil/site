@@ -1,0 +1,110 @@
+---
+layout: layout.njk
+title: Dérig - WhatsApp (11) 98232-0041
+description: Fale com a Dérig. Dúvidas? Entre em contato conosco!
+---
+
+<div id="contato">
+	<div id="headerInterno">
+		<div class="container">
+			<p><a href="/">Home</a> > Contato</p>
+			<h1>Contato</h1>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<section class="col-md-6">
+					<h1>Canais de atendimento</h1>
+
+					<ul id="fones">
+						<li>
+							<span><i class="fas fa-phone-volume"></i>Atendimento ao cliente</span>
+						</li><br>
+						<li><a href="tel:08007771991">0800 777-1991</a></li>
+						<br>
+						<a href="tel:1141618090">(11) 4161-8090</a>
+						<br>
+						<a href="https://api.whatsapp.com/send?phone=5511982320041">(11) 98232-0041</a>
+					</ul>
+
+					<span><i class="fas fa-envelope"></i>E-mail</span>
+					<ul>
+						<li>
+							<a href="mailto:vendas@derig.com.br">vendas@derig.com.br</a>
+						</li>
+						<li>
+							<a href="mailto:derig@derig.com.br">derig@derig.com.br</a>
+						</li>
+					</ul>
+
+					<p id="trabalheConosco">
+						Venha fazer parte do nosso time, <span><a href="/trabalhe-conosco">trabalhe conosco.</a></span>
+					</p>
+				</section>
+				<section class="col-md-6">
+					<h1>Formulário de contato</h1>
+
+					<form id="contatoForm">
+						<label for="nome">Nome</label>
+						<input type="text" name="nome" id="nome" required>
+
+						<label for="email">E-mail</label>
+						<input type="email" name="email" id="email" required>
+
+						<label for="ajuda">Como podemos te ajudar?</label>
+						<select name="ajuda" id="ajuda" required>
+							<option value="">Selecione</option>
+							<option value="Informações sobre preços">Informações sobre preços</option>
+							<option value="Promoções">Promoções</option>
+							<option value="Informações sobre produtos">Informações sobre produtos</option>
+							<option value="Outro">Outro</option>
+						</select>
+
+						<label for="mensagem">Mensagem</label>
+						<textarea name="mensagem" id="mensagem"></textarea>
+
+						<input type="checkbox" name="opt1" value="Solicito o contato de um representante Dérig"> Solicito o contato de um representante Dérig<br>
+						<input type="checkbox" name="opt2" value="Tenho interesse em receber material informativo sobre prótese/implante"> Tenho interesse em receber material informativo sobre prótese/implante<br>
+
+						<input class="pull-right" type="submit" value="Enviar">
+						<p id="successMsg" style="display: none;"><img src="/images/layout/ico-sucesso.png" alt="Check">Mensagem enviada com sucesso!</p>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function() {
+    const form = document.getElementById('contatoForm');
+    if (!form) return;
+    const success = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      success && (success.style.display = 'none');
+      const submitBtn = form.querySelector('input[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      try {
+        const res = await fetch('/api/form/contato', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) {
+          alert('Falha ao enviar. Tente novamente mais tarde.');
+          return;
+        }
+        if (success) success.style.display = 'block';
+        form.reset();
+      } catch (_) {
+        alert('Erro de rede. Verifique sua conexão.');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  })();
+</script>

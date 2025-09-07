@@ -1,0 +1,555 @@
+---
+layout: layout.njk
+title: Registro | Biblioteca Digital | Dérig
+excludeFromSitemap: true
+---
+<div id="ondeComprar" class="cadastro">
+  <div id="headerInterno">
+    <div class="container">
+      <p><a href="/">Home</a> > <a href="/biblioteca">Biblioteca Digital</a> > Registro</p>
+      <h1>Registro</h1>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container py-4">
+      <form id="regForm" class="form-horizontal">
+        <h2>Informações pessoais</h2>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <label for="nome">Nome*</label>
+            <input type="text" id="nome" name="nome" class="form-control" maxlength="50" required>
+            <div class="field-error" data-error-for="nome" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+          <div class="col-sm-6">
+            <label for="sobrenome">Sobrenome*</label>
+            <input type="text" id="sobrenome" name="sobrenome" class="form-control" maxlength="50" required>
+            <div class="field-error" data-error-for="sobrenome" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <div class="col-sm-12">
+            <input type="text" id="empresa" name="empresa" class="form-control" maxlength="100">
+            <div class="field-error" data-error-for="empresa" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-4">
+            <label for="telefone_pais">País (DDI)</label>
+            <select id="telefone_pais" name="telefone_pais" class="form-control">
+              <option value="+55" selected>Brasil (+55)</option>
+              <option value="" disabled>──────────</option>
+              <option value="+93">Afeganistão (+93)</option>
+              <option value="+27">África do Sul (+27)</option>
+              <option value="+355">Albânia (+355)</option>
+              <option value="+49">Alemanha (+49)</option>
+              <option value="+376">Andorra (+376)</option>
+              <option value="+244">Angola (+244)</option>
+              <option value="+1-264">Anguila (+1-264)</option>
+              <option value="+1-268">Antígua e Barbuda (+1-268)</option>
+              <option value="+966">Arábia Saudita (+966)</option>
+              <option value="+213">Argélia (+213)</option>
+              <option value="+54">Argentina (+54)</option>
+              <option value="+374">Armênia (+374)</option>
+              <option value="+297">Aruba (+297)</option>
+              <option value="+61">Austrália (+61)</option>
+              <option value="+43">Áustria (+43)</option>
+              <option value="+994">Azerbaijão (+994)</option>
+              <option value="+1-242">Bahamas (+1-242)</option>
+              <option value="+973">Bahrein (+973)</option>
+              <option value="+880">Bangladesh (+880)</option>
+              <option value="+1-246">Barbados (+1-246)</option>
+              <option value="+375">Bielorrússia (+375)</option>
+              <option value="+32">Bélgica (+32)</option>
+              <option value="+501">Belize (+501)</option>
+              <option value="+229">Benim (+229)</option>
+              <option value="+1-441">Bermudas (+1-441)</option>
+              <option value="+591">Bolívia (+591)</option>
+              <option value="+387">Bósnia e Herzegovina (+387)</option>
+              <option value="+267">Botsuana (+267)</option>
+              <option value="+55">Brasil (+55)</option>
+              <option value="+673">Brunei (+673)</option>
+              <option value="+359">Bulgária (+359)</option>
+              <option value="+226">Burkina Faso (+226)</option>
+              <option value="+257">Burundi (+257)</option>
+              <option value="+975">Butão (+975)</option>
+              <option value="+238">Cabo Verde (+238)</option>
+              <option value="+237">Camarões (+237)</option>
+              <option value="+855">Camboja (+855)</option>
+              <option value="+1">Canadá (+1)</option>
+              <option value="+974">Catar (+974)</option>
+              <option value="+7">Cazaquistão (+7)</option>
+              <option value="+235">Chade (+235)</option>
+              <option value="+56">Chile (+56)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+357">Chipre (+357)</option>
+              <option value="+57">Colômbia (+57)</option>
+              <option value="+269">Comores (+269)</option>
+              <option value="+242">Congo (+242)</option>
+              <option value="+243">Congo (RDC) (+243)</option>
+              <option value="+850">Coreia do Norte (+850)</option>
+              <option value="+82">Coreia do Sul (+82)</option>
+              <option value="+225">Costa do Marfim (+225)</option>
+              <option value="+506">Costa Rica (+506)</option>
+              <option value="+385">Croácia (+385)</option>
+              <option value="+53">Cuba (+53)</option>
+              <option value="+599">Curaçao (+599)</option>
+              <option value="+45">Dinamarca (+45)</option>
+              <option value="+253">Djibuti (+253)</option>
+              <option value="+1-767">Dominica (+1-767)</option>
+              <option value="+20">Egito (+20)</option>
+              <option value="+503">El Salvador (+503)</option>
+              <option value="+971">Emirados Árabes Unidos (+971)</option>
+              <option value="+593">Equador (+593)</option>
+              <option value="+291">Eritreia (+291)</option>
+              <option value="+421">Eslováquia (+421)</option>
+              <option value="+386">Eslovênia (+386)</option>
+              <option value="+34">Espanha (+34)</option>
+              <option value="+1">Estados Unidos (+1)</option>
+              <option value="+372">Estônia (+372)</option>
+              <option value="+251">Etiópia (+251)</option>
+              <option value="+679">Fiji (+679)</option>
+              <option value="+63">Filipinas (+63)</option>
+              <option value="+358">Finlândia (+358)</option>
+              <option value="+33">França (+33)</option>
+              <option value="+241">Gabão (+241)</option>
+              <option value="+220">Gâmbia (+220)</option>
+              <option value="+233">Gana (+233)</option>
+              <option value="+995">Geórgia (+995)</option>
+              <option value="+350">Gibraltar (+350)</option>
+              <option value="+1-473">Granada (+1-473)</option>
+              <option value="+30">Grécia (+30)</option>
+              <option value="+299">Groenlândia (+299)</option>
+              <option value="+590">Guadalupe (+590)</option>
+              <option value="+502">Guatemala (+502)</option>
+              <option value="+592">Guiana (+592)</option>
+              <option value="+594">Guiana Francesa (+594)</option>
+              <option value="+224">Guiné (+224)</option>
+              <option value="+245">Guiné-Bissau (+245)</option>
+              <option value="+240">Guiné Equatorial (+240)</option>
+              <option value="+509">Haiti (+509)</option>
+              <option value="+504">Honduras (+504)</option>
+              <option value="+852">Hong Kong (+852)</option>
+              <option value="+36">Hungria (+36)</option>
+              <option value="+967">Iêmen (+967)</option>
+              <option value="+1-345">Ilhas Cayman (+1-345)</option>
+              <option value="+682">Ilhas Cook (+682)</option>
+              <option value="+298">Ilhas Faroe (+298)</option>
+              <option value="+692">Ilhas Marshall (+692)</option>
+              <option value="+677">Ilhas Salomão (+677)</option>
+              <option value="+1-284">Ilhas Virgens Britânicas (+1-284)</option>
+              <option value="+1-340">Ilhas Virgens Americanas (+1-340)</option>
+              <option value="+91">Índia (+91)</option>
+              <option value="+62">Indonésia (+62)</option>
+              <option value="+98">Irã (+98)</option>
+              <option value="+964">Iraque (+964)</option>
+              <option value="+353">Irlanda (+353)</option>
+              <option value="+354">Islândia (+354)</option>
+              <option value="+972">Israel (+972)</option>
+              <option value="+39">Itália (+39)</option>
+              <option value="+1-876">Jamaica (+1-876)</option>
+              <option value="+81">Japão (+81)</option>
+              <option value="+962">Jordânia (+962)</option>
+              <option value="+254">Quênia (+254)</option>
+              <option value="+996">Quirguistão (+996)</option>
+              <option value="+965">Kuwait (+965)</option>
+              <option value="+856">Laos (+856)</option>
+              <option value="+266">Lesoto (+266)</option>
+              <option value="+371">Letônia (+371)</option>
+              <option value="+961">Líbano (+961)</option>
+              <option value="+231">Libéria (+231)</option>
+              <option value="+218">Líbia (+218)</option>
+              <option value="+423">Liechtenstein (+423)</option>
+              <option value="+370">Lituânia (+370)</option>
+              <option value="+352">Luxemburgo (+352)</option>
+              <option value="+853">Macau (+853)</option>
+              <option value="+389">Macedônia do Norte (+389)</option>
+              <option value="+261">Madagascar (+261)</option>
+              <option value="+60">Malásia (+60)</option>
+              <option value="+265">Maláui (+265)</option>
+              <option value="+960">Maldivas (+960)</option>
+              <option value="+223">Mali (+223)</option>
+              <option value="+356">Malta (+356)</option>
+              <option value="+212">Marrocos (+212)</option>
+              <option value="+596">Martinica (+596)</option>
+              <option value="+230">Maurício (+230)</option>
+              <option value="+222">Mauritânia (+222)</option>
+              <option value="+52">México (+52)</option>
+              <option value="+691">Micronésia (+691)</option>
+              <option value="+258">Moçambique (+258)</option>
+              <option value="+373">Moldávia (+373)</option>
+              <option value="+377">Mônaco (+377)</option>
+              <option value="+976">Mongólia (+976)</option>
+              <option value="+382">Montenegro (+382)</option>
+              <option value="+95">Myanmar (+95)</option>
+              <option value="+264">Namíbia (+264)</option>
+              <option value="+674">Nauru (+674)</option>
+              <option value="+977">Nepal (+977)</option>
+              <option value="+505">Nicarágua (+505)</option>
+              <option value="+227">Níger (+227)</option>
+              <option value="+234">Nigéria (+234)</option>
+              <option value="+683">Niue (+683)</option>
+              <option value="+47">Noruega (+47)</option>
+              <option value="+687">Nova Caledônia (+687)</option>
+              <option value="+64">Nova Zelândia (+64)</option>
+              <option value="+968">Omã (+968)</option>
+              <option value="+31">Países Baixos (+31)</option>
+              <option value="+680">Palau (+680)</option>
+              <option value="+970">Palestina (+970)</option>
+              <option value="+507">Panamá (+507)</option>
+              <option value="+675">Papua-Nova Guiné (+675)</option>
+              <option value="+92">Paquistão (+92)</option>
+              <option value="+595">Paraguai (+595)</option>
+              <option value="+51">Peru (+51)</option>
+              <option value="+48">Polônia (+48)</option>
+              <option value="+1-787">Porto Rico (+1-787)</option>
+              <option value="+351">Portugal (+351)</option>
+              <option value="+44">Reino Unido (+44)</option>
+              <option value="+236">República Centro-Africana (+236)</option>
+              <option value="+1-809">República Dominicana (+1-809)</option>
+              <option value="+420">República Tcheca (+420)</option>
+              <option value="+40">Romênia (+40)</option>
+              <option value="+250">Ruanda (+250)</option>
+              <option value="+7">Rússia (+7)</option>
+              <option value="+212">Saara Ocidental (+212)</option>
+              <option value="+685">Samoa (+685)</option>
+              <option value="+1-684">Samoa Americana (+1-684)</option>
+              <option value="+378">San Marino (+378)</option>
+              <option value="+1-869">São Cristóvão e Nevis (+1-869)</option>
+              <option value="+239">São Tomé e Príncipe (+239)</option>
+              <option value="+1-784">São Vicente e Granadinas (+1-784)</option>
+              <option value="+248">Seicheles (+248)</option>
+              <option value="+221">Senegal (+221)</option>
+              <option value="+232">Serra Leoa (+232)</option>
+              <option value="+381">Sérvia (+381)</option>
+              <option value="+65">Singapura (+65)</option>
+              <option value="+963">Síria (+963)</option>
+              <option value="+252">Somália (+252)</option>
+              <option value="+94">Sri Lanka (+94)</option>
+              <option value="+268">Essuatíni (+268)</option>
+              <option value="+249">Sudão (+249)</option>
+              <option value="+211">Sudão do Sul (+211)</option>
+              <option value="+46">Suécia (+46)</option>
+              <option value="+41">Suíça (+41)</option>
+              <option value="+597">Suriname (+597)</option>
+              <option value="+992">Tajiquistão (+992)</option>
+              <option value="+66">Tailândia (+66)</option>
+              <option value="+886">Taiwan (+886)</option>
+              <option value="+255">Tanzânia (+255)</option>
+              <option value="+670">Timor-Leste (+670)</option>
+              <option value="+228">Togo (+228)</option>
+              <option value="+676">Tonga (+676)</option>
+              <option value="+1-868">Trindade e Tobago (+1-868)</option>
+              <option value="+216">Tunísia (+216)</option>
+              <option value="+993">Turcomenistão (+993)</option>
+              <option value="+90">Turquia (+90)</option>
+              <option value="+688">Tuvalu (+688)</option>
+              <option value="+380">Ucrânia (+380)</option>
+              <option value="+256">Uganda (+256)</option>
+              <option value="+598">Uruguai (+598)</option>
+              <option value="+998">Uzbequistão (+998)</option>
+              <option value="+678">Vanuatu (+678)</option>
+              <option value="+379">Vaticano (+379)</option>
+              <option value="+58">Venezuela (+58)</option>
+              <option value="+84">Vietnã (+84)</option>
+              <option value="+260">Zâmbia (+260)</option>
+              <option value="+263">Zimbábue (+263)</option>
+            </select>
+          </div>
+          <div class="col-sm-8">
+            <label for="telefone">Telefone*</label>
+            <input type="text" id="telefone" name="telefone" class="form-control" inputmode="numeric" placeholder="Ex.: (00) 00000-0000" required>
+            <div class="field-error" data-error-for="telefone" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <div class="col-sm-12">
+            <input type="email" id="email" name="email" class="form-control" maxlength="100" required>
+            <div class="field-error" data-error-for="email" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+
+        <h2>Informações profissionais</h2>
+        <div class="form-group">
+          <div class="col-sm-4">
+            <label for="cro">CRO</label>
+            <input type="text" id="cro" name="cro" class="form-control" maxlength="6">
+            <div class="field-error" data-error-for="cro" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+          <div class="col-sm-2 col-xs-4">
+            <label for="cro_uf">UF</label>
+            <input type="text" id="cro_uf" name="cro_uf" class="form-control" maxlength="2" pattern="[A-Za-z]{2}">
+            <div class="field-error" data-error-for="cro_uf" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="especialidade">Especialidade*</label>
+          <div class="col-sm-10">
+            <select id="especialidade" name="especialidade" required>
+              <option value="" selected disabled>Selecione a especialidade</option>
+              <option value="Cirurgião-Dentista (Clínico Geral)">Cirurgião-Dentista (Clínico Geral)</option>
+              <option value="Implantodontia">Implantodontia</option>
+              <option value="Periodontia">Periodontia</option>
+              <option value="Endodontia">Endodontia</option>
+              <option value="Prótese Dentária">Prótese Dentária</option>
+              <option value="Ortodontia">Ortodontia</option>
+              <option value="Odontopediatria">Odontopediatria</option>
+              <option value="Cirurgia e Traumatologia Bucomaxilofacial">Cirurgia e Traumatologia Bucomaxilofacial</option>
+              <option value="Radiologia Odontológica e Imaginologia">Radiologia Odontológica e Imaginologia</option>
+              <option value="Odontologia Estética (Dentística)">Odontologia Estética (Dentística)</option>
+              <option value="Estomatologia">Estomatologia</option>
+              <option value="Disfunção Temporomandibular e Dor Orofacial">Disfunção Temporomandibular e Dor Orofacial</option>
+              <option value="Odontogeriatria">Odontogeriatria</option>
+              <option value="Odontologia do Trabalho">Odontologia do Trabalho</option>
+              <option value="Odontologia Legal">Odontologia Legal</option>
+              <option value="Saúde Coletiva">Saúde Coletiva</option>
+              <option value="Acupuntura">Acupuntura</option>
+              <option value="Laserterapia">Laserterapia</option>
+              <option value="Harmonização Orofacial">Harmonização Orofacial</option>
+              <option value="Outro">Outro (especificar)</option>
+            </select>
+
+            <input type="text" id="especialidade_outro" class="form-control mt-2" maxlength="64" placeholder="Especifique a especialidade" style="display:none" />
+            <div class="field-error" data-error-for="especialidade" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha*</label>
+          <div class="col-sm-6">
+            <input type="password" id="password" name="password" class="form-control" required>
+            <div class="field-error" data-error-for="password" style="color:#b00020;font-size:12px;margin-top:4px;"></div>
+          </div>
+        </div>
+
+        <br />
+        <div class="form-group" id="enviar">
+          <div id="general-error" style="color:#b00020;font-size:13px;margin-bottom:8px;"></div>
+          <input type="submit" value="Cadastrar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+function setupEspecialidadeOutro(){
+  const select = document.getElementById('especialidade');
+  const other = document.getElementById('especialidade_outro');
+  if (!select || !other) return;
+  const toggle = () => {
+    const isOther = select.value === 'Outro';
+    other.style.display = isOther ? 'block' : 'none';
+    other.required = isOther;
+    if (!isOther) other.value = '';
+  };
+  select.addEventListener('change', toggle);
+  toggle();
+}
+function clearErrors(form){
+  form.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+  const general = form.querySelector('#general-error');
+  if (general) general.textContent = '';
+  // remove visual error classes
+  form.querySelectorAll('.is-error').forEach((el) => el.classList.remove('is-error'));
+  form.querySelectorAll('label.label-error').forEach((el) => el.classList.remove('label-error'));
+}
+function setFieldError(form, key, message){
+  const container = form.querySelector(`.field-error[data-error-for="${key}"]`);
+  if (container) container.textContent = message;
+  // add visual error classes to input and its form-group
+  const field = form.querySelector(`[name="${key}"]`) || form.querySelector(`#${key}`);
+  if (field) field.classList.add('is-error');
+  // highlight only the label linked to this field
+  if (field && field.id){
+    const label = form.querySelector(`label[for="${field.id}"]`);
+    if (label) label.classList.add('label-error');
+  }
+}
+function setGeneralError(form, message){
+  const general = form.querySelector('#general-error');
+  if (general) general.textContent = message;
+}
+function scrollToFirstError(form){
+  const firstErr = Array.from(form.querySelectorAll('.field-error')).find(el => (el.textContent || '').trim().length > 0);
+  if (firstErr){
+    const key = firstErr.getAttribute('data-error-for') || '';
+    const field = form.querySelector(`[name="${key}"]`) || form.querySelector(`#${key}`);
+    if (field && typeof field.focus === 'function') {
+      field.focus();
+    }
+    // Use scrollIntoView for smooth UX
+    firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+function onlyDigits(value){
+  return String(value || '').replace(/\D+/g, '');
+}
+function formatBrazilPhone(d){
+  const digits = onlyDigits(d).slice(0, 11);
+  if (digits.length === 0) return '';
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0,2)}) ${digits.slice(2)}`;
+  if (digits.length <= 10){
+    const mid = digits.slice(2, digits.length - 4);
+    const end = digits.slice(-4);
+    return `(${digits.slice(0,2)}) ${mid}-${end}`;
+  }
+  // 11 digits
+  return `(${digits.slice(0,2)}) ${digits.slice(2,7)}-${digits.slice(7,11)}`;
+}
+function formatIntlGeneric(d){
+  const digits = onlyDigits(d).slice(0, 20);
+  if (digits.length <= 4) return digits;
+  return `${digits.slice(0, digits.length - 4)}-${digits.slice(-4)}`;
+}
+function setupTelefoneFormatter(){
+  const tel = document.getElementById('telefone');
+  const country = document.getElementById('telefone_pais');
+  if (!tel || !country) return;
+  const applyFormat = () => {
+    const cc = country.value.startsWith('+55') ? '+55' : 'other';
+    const raw = tel.value;
+    tel.value = cc === '+55' ? formatBrazilPhone(raw) : formatIntlGeneric(raw);
+  };
+  const updatePlaceholder = () => {
+    const cc = country.value.startsWith('+55') ? '+55' : 'other';
+    tel.placeholder = cc === '+55' ? '(00) 00000-0000' : 'Ex.: 123456-7890';
+  };
+  ['input','blur','paste'].forEach(ev => tel.addEventListener(ev, applyFormat));
+  country.addEventListener('change', () => { updatePlaceholder(); applyFormat(); });
+  updatePlaceholder();
+  applyFormat();
+}
+async function onRegister(e){
+  e.preventDefault();
+  const form = e.target;
+  clearErrors(form);
+  let hasErrors = false;
+  // CRO/CRO_UF pairing validation
+  const cro = (form.querySelector('#cro')?.value || '').trim();
+  const croUf = (form.querySelector('#cro_uf')?.value || '').trim();
+  if ((cro && !croUf) || (!cro && croUf)){
+    const msg = 'Informe CRO e UF juntos.';
+    setFieldError(form, 'cro', msg);
+    setFieldError(form, 'cro_uf', msg);
+    hasErrors = true;
+  }
+  // Validar especialidade e mapear 'Outro (especificar)'
+  const select = form.querySelector('#especialidade');
+  if (!select || !select.value){
+    setFieldError(form, 'especialidade', 'Informe sua especialidade.');
+    hasErrors = true;
+  }
+  if (select && select.value === 'Outro'){
+    const other = (form.querySelector('#especialidade_outro')?.value || '').trim();
+    if (!other){
+      setFieldError(form, 'especialidade', 'Informe a especialidade.');
+      hasErrors = true;
+    } else {
+      let hidden = form.querySelector('#especialidade_hidden');
+      if (!hidden){
+        hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'especialidade';
+        hidden.id = 'especialidade_hidden';
+        form.appendChild(hidden);
+      }
+      hidden.value = `outro - ${other}`;
+    }
+  } else {
+    const hidden = form.querySelector('#especialidade_hidden');
+    if (hidden) hidden.remove();
+  }
+  // Required fields validation (custom, shows all issues)
+  const nome = (form.querySelector('#nome')?.value || '').trim();
+  if (!nome){ setFieldError(form, 'nome', 'Campo obrigatório'); hasErrors = true; }
+  const sobrenome = (form.querySelector('#sobrenome')?.value || '').trim();
+  if (!sobrenome){ setFieldError(form, 'sobrenome', 'Campo obrigatório'); hasErrors = true; }
+  const telVal = (form.querySelector('#telefone')?.value || '').replace(/\D+/g, '');
+  if (!telVal){ setFieldError(form, 'telefone', 'Campo obrigatório'); hasErrors = true; }
+  const email = (form.querySelector('#email')?.value || '').trim();
+  if (!email){
+    setFieldError(form, 'email', 'Campo obrigatório'); hasErrors = true;
+  } else {
+    const emailOk = /.+@.+\..+/.test(email);
+    if (!emailOk){ setFieldError(form, 'email', 'E-mail inválido'); hasErrors = true; }
+  }
+  const pwd = (form.querySelector('#password')?.value || '').toString();
+  if (!pwd){ setFieldError(form, 'password', 'Campo obrigatório'); hasErrors = true; }
+  if (hasErrors){
+    scrollToFirstError(form);
+    return false;
+  }
+  // Prepend selected DDI to telefone in the submitted payload (do not alter visible field)
+  const telInput = form.querySelector('#telefone');
+  const ddiSelect = form.querySelector('#telefone_pais');
+  const data = new FormData(form);
+  if (telInput && ddiSelect) {
+    const ddi = String(ddiSelect.value || '').replace(/\D+/g, '');
+    const local = String(telInput.value || '').replace(/\D+/g, '');
+    if (ddi && local) {
+      data.set('telefone', `+${ddi}${local}`);
+    }
+  }
+  const endpoint = '/api/biblioteca/register';
+  const res = await fetch(endpoint, { method: 'POST', body: data, credentials: 'include' });
+  try{
+    const json = await res.json();
+    if(json && json.success){
+      const email = (form.querySelector('#email')?.value || '').trim();
+      const to = new URL('/biblioteca/verificar-email', location.origin);
+      if (email) to.search = `email=${encodeURIComponent(email)}`;
+      location.href = to.toString();
+      return false;
+    }
+    // Render API validation errors
+    if (json && json.errors && typeof json.errors === 'object'){
+      let usedGeneral = false;
+      for (const [key, msg] of Object.entries(json.errors)){
+        const message = String(msg || 'Inválido');
+        const hasField = Boolean(form.querySelector(`[name="${key}"]`)) || Boolean(form.querySelector(`#${key}`)) || Boolean(form.querySelector(`[data-error-for="${key}"]`));
+        if (hasField){
+          setFieldError(form, key, message);
+        } else {
+          setGeneralError(form, message);
+          usedGeneral = true;
+        }
+      }
+      if (!usedGeneral && json.error){
+        setGeneralError(form, String(json.error));
+      }
+      return false;
+    }
+    if (json && json.error){
+      setGeneralError(form, String(json.error));
+      return false;
+    }
+  }catch(_){}
+  setGeneralError(form, 'Falha no cadastro.');
+  return false;
+}
+// Attach handlers and disable native validation via JS
+function setupForm(){
+  const form = document.getElementById('regForm');
+  if (!form) return;
+  form.noValidate = true;
+  form.addEventListener('submit', onRegister);
+}
+setupForm();
+setupEspecialidadeOutro();
+setupTelefoneFormatter();
+</script>
+
+<style>
+  /* Visual error state */
+  .form-group.has-error .form-control,
+  .form-control.is-error {
+    border-color: #b00020 !important;
+    box-shadow: 0 0 0 0.2rem rgba(176, 0, 32, 0.1);
+  }
+  .form-group.has-error label { color: #b00020; }
+  .field-error { color:#b00020; font-size:12px; margin-top:4px; }
+</style>
