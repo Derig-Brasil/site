@@ -135,9 +135,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Node
-package-lock.json
-
 # Eleventy build output
 _site/
 
