@@ -74,3 +74,70 @@ npm run deploy
 ## Notes
 
 - Local dev flow: keep `watch` running to update `_site/` on changes, and run `dev:worker` to serve via the Worker so you can test the contact API.
+
+## Centralized Configuration (KV)
+
+This project supports centrally managed, non-secret configuration via Cloudflare KV. The Worker loads a JSON config blob from the `CONFIG` KV binding at key `config` and hydrates missing values at runtime.
+
+- Resolution order: ENV/Vars/Secrets overrides > KV stored config > code defaults.
+- Secrets must NOT go into KV. Keep these as Cloudflare secrets:
+  - `MC_API_KEY`
+  - `DKIM_PRIVATE_KEY`
+  - `JWT_SECRET`
+
+Non-secret keys currently supported from KV:
+
+- `ALLOW_ORIGIN`
+- `DKIM_DOMAIN`
+- `DKIM_SELECTOR`
+- `EMAIL_CONTACT`
+- `EMAIL_REGISTRATION`
+- `EMAIL_WORKWITHUS`
+- `FROM_EMAIL`
+
+### Setup KV Namespaces
+
+Create the namespaces (one per environment):
+
+```bash
+wrangler kv namespace create site-config
+wrangler kv namespace create site-config --env test
+```
+
+Copy the resulting Namespace IDs into `wrangler.jsonc` under `kv_namespaces` for the default (prod) and `env.test` sections, replacing the placeholders `REPLACE_WITH_PROD_KV_ID` and `REPLACE_WITH_TEST_KV_ID`.
+
+### Seed or Update Config
+
+The Worker expects a single JSON object stored at key `config`:
+
+```bash
+# Example production configuration
+wrangler kv:key put --binding CONFIG config '{
+  "ALLOW_ORIGIN": "https://derig.com.br",
+  ...
+}'
+
+# Example test configuration
+wrangler kv:key put --env test --binding CONFIG config '{
+  "ALLOW_ORIGIN": "*",
+  ...
+}'
+```
+
+Update is the same command; it overwrites the value.
+
+### Environment Overrides
+
+Any variable provided via Cloudflare Env Vars or Secrets will override the KV value at runtime. You can set overrides either via the Cloudflare dashboard or Wrangler:
+
+```bash
+# Vars (non-secret)
+wrangler deploy -v ALLOW_ORIGIN=*
+
+# Secrets (interactive prompts)
+wrangler secret put MC_API_KEY
+wrangler secret put DKIM_PRIVATE_KEY
+wrangler secret put JWT_SECRET
+```
+
+These overrides apply independently for the `test` environment with `--env test`.

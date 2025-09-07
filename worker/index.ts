@@ -12,6 +12,7 @@ export interface Env {
   JWT_SECRET?: string;
   DB?: D1Database;
   BIBLIOTECA_R2?: R2Bucket;
+  CONFIG?: KVNamespace;
 }
 
 export default {
@@ -19,6 +20,7 @@ export default {
     const url = new URL(request.url);
 
     console.log('[fetch] incoming request', { method: request.method, path: url.pathname });
+    await hydrateEnvFromKV(env);
 
     // CORS preflight for API route
     if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
@@ -582,6 +584,71 @@ function withJsonCors(headers: Headers, env: Env): Headers {
   headers.set('access-control-allow-methods', 'POST, OPTIONS');
   headers.set('access-control-allow-headers', 'content-type');
   return headers;
+}
+
+// -----------------------------
+// Centralized configuration (KV)
+// -----------------------------
+type KvBackedConfig = Partial<
+  Pick<
+    Env,
+    | 'ALLOW_ORIGIN'
+    | 'DKIM_DOMAIN'
+    | 'DKIM_SELECTOR'
+    | 'EMAIL_CONTACT'
+    | 'EMAIL_REGISTRATION'
+    | 'EMAIL_WORKWITHUS'
+    | 'FROM_EMAIL'
+  >
+> & Record<string, unknown>;
+
+const KV_CONFIG_KEY = 'config'; // Key inside CONFIG KV that stores JSON blob
+let CONFIG_CACHE: { at: number; data: KvBackedConfig } | null = null;
+const CONFIG_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+async function hydrateEnvFromKV(env: Env): Promise<void> {
+  try {
+    if (!env.CONFIG) return;
+    let obj: KvBackedConfig | null = null;
+    const now = Date.now();
+    if (CONFIG_CACHE && now - CONFIG_CACHE.at < CONFIG_TTL_MS) {
+      obj = CONFIG_CACHE.data;
+    } else {
+      const raw = await env.CONFIG.get(KV_CONFIG_KEY, 'text');
+      if (!raw) return;
+      try {
+        obj = JSON.parse(raw);
+      } catch (_) {
+        console.warn('[config] invalid JSON stored in KV under key', KV_CONFIG_KEY);
+        return;
+      }
+      if (!obj || typeof obj !== 'object') return;
+      CONFIG_CACHE = { at: now, data: obj };
+    }
+
+    // Only allow-list non-secret keys to flow from KV to env.
+    // Secrets must remain configured via Cloudflare secrets: MC_API_KEY, DKIM_PRIVATE_KEY.
+    const allowedKeys: Array<keyof KvBackedConfig> = [
+      'ALLOW_ORIGIN',
+      'DKIM_DOMAIN',
+      'DKIM_SELECTOR',
+      'EMAIL_CONTACT',
+      'EMAIL_REGISTRATION',
+      'EMAIL_WORKWITHUS',
+      'FROM_EMAIL',
+    ];
+
+    for (const k of allowedKeys) {
+      const v = (obj as any)[k];
+      if (v === undefined || v === null) continue;
+      // Do not overwrite if already provided by environment/vars/secrets.
+      if ((env as any)[k] === undefined || (env as any)[k] === null || (env as any)[k] === '') {
+        (env as any)[k] = String(v);
+      }
+    }
+  } catch (e: any) {
+    console.warn('[config] hydrateEnvFromKV error', e && (e.stack || e.message || e));
+  }
 }
 
 async function sendContactEmail(request: Request, env: Env): Promise<Response> {
