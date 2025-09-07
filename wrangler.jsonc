@@ -43,6 +43,7 @@
 	],
 	"env": {
 		"test": {
+			"name": "site-test",
 			"workers_dev": true,
 			"routes": [],
 			"r2_buckets": [
