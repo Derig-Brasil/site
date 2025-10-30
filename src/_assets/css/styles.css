@@ -786,3 +786,30 @@ padding: 15px 5px; text-align: center; vertical-align: middle;
 #produtoTpl1 #content #caracteristicas ul {list-style: none!important;}
 #produtoTpl1 #content #caracteristicas ul li:before {color: #f04e23; content: ' \25CF'; font-size: 10px; margin-right: 5px;}
 #produtoTpl1 #content #caracteristicas ul li ul {list-style: none; padding-left: 20px;}
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 9999;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  background: #1ebe57;
+  color: #fff;
+  text-decoration: none;
+}
+.whatsapp-float i {
+  font-size: 28px;
+  line-height: 1;
+}
