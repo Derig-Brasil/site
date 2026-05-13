@@ -1,143 +1,24 @@
-# DÉRIG website
+# DÉRIG Website
 
-## Features
+## Tech Stack
 
-- __Eleventy__ static site generator
-- __Cloudflare Worker__ serving built assets and handling `/api/*`
-- __MailChannels__ email delivery (no external server required)
-- __Dev Container__ for development without Node installed locally
+- **Eleventy**: Static site generator.
+- **Cloudflare Workers**: Serves static assets and handles `/api/*` endpoints.
+- **MailChannels**: Email delivery.
 
-## Prereqs
+## Documentation
 
-- VS Code with the "Dev Containers" extension, or any editor that can open a Dev Container
-- A Cloudflare account with Wrangler authenticated (`wrangler login` inside the container)
+For detailed information on how to work with this project, please refer to the following guides:
 
-## Getting Started (Dev Container)
+- 🛠️ **[Development Guide](./docs/development.md)**: Prerequisites, local setup, and development scripts.
+- 🚀 **[Deployment Guide](./docs/deployment.md)**: Instructions for deploying to production and test environments.
+- ⚙️ **[Configuration Guide](./docs/configuration.md)**: Managing environment variables, secrets, and Cloudflare KV settings.
+
+## Quick Start (Dev Container)
 
 1. Open this folder in VS Code.
-2. When prompted, "Reopen in Container". Alternatively: Command Palette → "Dev Containers: Reopen in Container".
-3. Inside the container terminal:
+2. Select **"Reopen in Container"** when prompted.
+3. Run `npm install` and `npm run build`.
+4. Run `npm run watch` in one terminal and `npm run dev:worker` in another.
+5. Visit [http://localhost:8787](http://localhost:8787).
 
-```bash
-npm install
-npm run build        # builds Eleventy to _site/
-```
-
-4. In one terminal, watch Eleventy changes:
-
-```bash
-npm run watch
-```
-
-5. In another terminal, start the Worker locally:
-
-```bash
-npm run dev:worker   # serves _site/ as static assets and /api/* endpoint
-```
-
-- Open http://localhost:8787 to view the site (Wrangler default dev port).
-
-## Deploy
-
-1. Authenticate:
-
-```bash
-wrangler login
-```
-
-2. Build the site:
-
-```bash
-npm run build
-```
-
-3. Deploy the Worker:
-
-```bash
-npm run deploy
-```
-
-- The `[assets]` section in `wrangler.toml` points to `_site/`, so Wrangler will upload your static assets and the Worker `worker/index.js` will handle the API.
-
-## Scripts
-
-- `npm run build` – Build the site with Eleventy into `_site/`.
-- `npm run watch` – Rebuild on changes using Eleventy’s watch mode.
-- `npm run serve` – Run Eleventy’s dev server on http://localhost:8080 (does not run the Worker/API).
-- `npm run dev:worker` – Start Wrangler dev (serves `_site/` and `/api/*`) at http://localhost:8787.
-- `npm run deploy` – Deploy the Worker to Cloudflare (default/prod environment).
-- `npm run migrate:prod` – Apply D1 migrations to the `site-prod` database (remote).
-- `npm run deploy:with-migrations` – Run prod migrations then deploy to Cloudflare.
-- `npm run migrate:test` – Apply D1 migrations to the `site-test` database using `--env test` (remote).
-- `npm run deploy:test` – Build, run test migrations, then deploy with `--env test`.
-
-## Notes
-
-- Local dev flow: keep `watch` running to update `_site/` on changes, and run `dev:worker` to serve via the Worker so you can test the contact API.
-
-## Centralized Configuration (KV)
-
-This project supports centrally managed, non-secret configuration via Cloudflare KV. The Worker loads a JSON config blob from the `CONFIG` KV binding at key `config` and hydrates missing values at runtime.
-
-- Resolution order: ENV/Vars/Secrets overrides > KV stored config > code defaults.
-- Secrets must NOT go into KV. Keep these as Cloudflare secrets:
-  - `MC_API_KEY`
-  - `DKIM_PRIVATE_KEY`
-  - `JWT_SECRET`
-
-Non-secret keys currently supported from KV:
-
-- `ALLOW_ORIGIN`
-- `DKIM_DOMAIN`
-- `DKIM_SELECTOR`
-- `EMAIL_CONTACT`
-- `EMAIL_REGISTRATION`
-- `EMAIL_WORKWITHUS`
-- `FROM_EMAIL`
-
-### Setup KV Namespaces
-
-Create the namespaces (one per environment):
-
-```bash
-wrangler kv namespace create site-config
-wrangler kv namespace create site-config --env test
-```
-
-Copy the resulting Namespace IDs into `wrangler.jsonc` under `kv_namespaces` for the default (prod) and `env.test` sections, replacing the placeholders `REPLACE_WITH_PROD_KV_ID` and `REPLACE_WITH_TEST_KV_ID`.
-
-### Seed or Update Config
-
-The Worker expects a single JSON object stored at key `config`:
-
-```bash
-# Example production configuration
-wrangler kv:key put --binding CONFIG config '{
-  "ALLOW_ORIGIN": "https://derig.com.br",
-  ...
-}'
-
-# Example test configuration
-wrangler kv:key put --env test --binding CONFIG config '{
-  "ALLOW_ORIGIN": "*",
-  ...
-}'
-```
-
-Update is the same command; it overwrites the value.
-
-### Environment Overrides
-
-Any variable provided via Cloudflare Env Vars or Secrets will override the KV value at runtime. You can set overrides either via the Cloudflare dashboard or Wrangler:
-
-```bash
-# Vars (non-secret)
-wrangler deploy -v ALLOW_ORIGIN=*
-
-# Secrets (interactive prompts)
-wrangler secret put MC_API_KEY
-wrangler secret put DKIM_PRIVATE_KEY
-wrangler secret put JWT_SECRET
-```
-
-These overrides apply independently for the `test` environment with `--env test`.
